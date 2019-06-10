@@ -6,7 +6,7 @@ This is an educational tutorial, this free asset is for training purposes only.
 
 ### Introduction
 
-Two years ago, when I started with Unity, I created lightsaber (#1) like weapons to toy around in VR. Those have always been free for personal usage. Today I thought I'd try lightsaber like weapons in HDRP and share them as well. You can find the source code on github:
+Two years ago, when I started with Unity, I created lightsaber (see Addendum #1) like weapons to toy around in VR. Those have always been free for personal usage. Today I thought I'd try lightsaber like weapons in HDRP and share them as well. You can find the source code on [github](https://github.com/Roland09/Lightsabers-Tutorial).
 
 ### Preview
 
@@ -50,7 +50,7 @@ Here are the quick setup steps:
 
 ### How it works
 
-A lightsaber consists of a hilt and a blade. A hilt is fairly easily created in Blender. First create a ring and keep on extruding it. 
+A lightsaber consists of a hilt and a blade. A hilt is fairly easily created in Blender. First create a circle and keep on extruding it. 
 Scale the extrusions according to your requirements. Add a seam along an edge, unwrap it and use e. g. UVSquares to make the UVs squared. Looks like this:
 
 ![blender](https://user-images.githubusercontent.com/10963432/59186121-621b4e00-8b72-11e9-8014-a0537762905d.png)
@@ -61,13 +61,13 @@ Although you could texturize the model in Blender, I prefer Substance Painter. E
 
 ![substance painter](https://user-images.githubusercontent.com/10963432/59186466-38aef200-8b73-11e9-81e6-9446c8e6e4e5.png)
 
-The Blade is just a cylinder-like model. The important part is that the pivot point is set at the bottom of the Blade. The extension of the Blade over time works by scaling it along the Z-axis.
+The Blade is just a cylinder-like model. The important part is that the pivot point is set at the bottom of the Blade. The extension of the Blade over time in the script works by scaling it along the Z-axis.
 
 ![blade](https://user-images.githubusercontent.com/10963432/59186600-888db900-8b73-11e9-8211-30572a3c3bd3.png)
 
 Import the model and textures into Unity.
 
-Create the weapon like this:
+Create the weapon gameobject hierarchy like this:
 
 ![hierarchy](https://user-images.githubusercontent.com/10963432/59186819-284b4700-8b74-11e9-889a-d908fa6af38b.png)
 
@@ -79,15 +79,15 @@ Then there's the Weapon GameObject itself. It contains the Weapon.cs script whic
 
 ![weapon](https://user-images.githubusercontent.com/10963432/59186828-2da89180-8b74-11e9-962e-54cd854651eb.png)
 
-* The blades in an array. All of these will be activated and deactivated upon keypress
+* The blades in an array. All of these will be activated and deactivated upon keypress. Use as many as you like, minimum is 1
 * The blade extend speed specifies the time interval in seconds at which the blade will be extended and collapsed
 * Weapon Active specifies if the weapon is initially active or not
-* Blade color will be propagated to the blade and the light which is attached to the blade
+* Blade Color will be propagated to the blade and the light which is attached to the blade
 * Blade Color Intensity defines how much color will be used. This very much depends on your lighting settings (eg if you use lum or another)
 * Light Intensity is the intensity of the light which is attached to the blade. It's attached at the center of the blade, the intensity will vary depending on the expansion state
-* Then there are varous audio source which will be played when the weapon is switched on, off and is active
+* Then there are various audio sources which will be played when the weapon is switched on, off and is active
 
-The glow effect is created using a custom shader, a very simple one for now. You could do it with the standard HDRP shaders as well, but I intend to enhance it with a pulsating one in the future.
+The glow effect is created using a custom shader, a very simple one for now. You could do it with the built-in HDRP shaders as well, but I intend to enhance it with a pulsating one in the future.
 
 ![shader](https://user-images.githubusercontent.com/10963432/59187508-e7543200-8b75-11e9-894f-bc14cf71c5cb.png)
 
