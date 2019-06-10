@@ -91,7 +91,10 @@ The glow effect is created using a custom shader, a very simple one for now. You
 
 ![shader](https://user-images.githubusercontent.com/10963432/59187508-e7543200-8b75-11e9-894f-bc14cf71c5cb.png)
 
+### Render Pipeline Notes
 
+For now this is available for HDRP. Transforming it to Standard is as easy as creating the simple shader graph for it and converting the materials to standard material.
+Then add Post-processing v2 and add the Bloom effect to it.
 
 ### Addendum
 
