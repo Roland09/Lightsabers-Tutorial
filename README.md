@@ -10,7 +10,7 @@ Two years ago, when I started with Unity, I created lightsaber (#1) like weapons
 
 ### Preview
 
-Here's a preview video of what this is about:
+Here's a preview video of what this is about. Click on the picture to open the accompanying youtube video.
 
 [![How to create Lightsaber like Weapons in Unity](https://img.youtube.com/vi/SJ0ZCCjO5aQ/0.jpg)](https://www.youtube.com/watch?v=SJ0ZCCjO5aQ)
 
@@ -50,7 +50,42 @@ Here are the quick setup steps:
 
 ### How it works
 
-... to be done...
+A lightsaber consists of a hilt and a blade. A hilt is fairly easily created in Blender. First create a ring and keep on extruding it. 
+Scale the extrusions according to your requirements. Add a seam along an edge, unwrap it and use e. g. UVSquares to make the UVs squared. Looks like this:
+
+![blender](https://user-images.githubusercontent.com/10963432/59186121-621b4e00-8b72-11e9-8014-a0537762905d.png)
+
+*That's the double-sided hilt, I mirrored it along the Z-axis*
+
+Although you could texturize the model in Blender, I prefer Substance Painter. Export the file as FBX and add a texture in Substance Painter:
+
+![substance painter](https://user-images.githubusercontent.com/10963432/59186466-38aef200-8b73-11e9-81e6-9446c8e6e4e5.png)
+
+The Blade is just a cylinder-like model. The important part is that the pivot point is set at the bottom of the Blade. The extension of the Blade over time works by scaling it along the Z-axis.
+
+![blade](https://user-images.githubusercontent.com/10963432/59186600-888db900-8b73-11e9-8211-30572a3c3bd3.png)
+
+Import the model and textures into Unity.
+
+Create the weapon like this:
+
+![hierarchy](https://user-images.githubusercontent.com/10963432/59186819-284b4700-8b74-11e9-889a-d908fa6af38b.png)
+
+The parent is just a GameObject with a simple SpinPivot script which makes the weapon spin for show purposes if activated.
+
+![spin](https://user-images.githubusercontent.com/10963432/59186825-2b463780-8b74-11e9-9eb1-3dd5a41d1a37.png)
+
+Then there's the Weapon GameObject itself. It contains the Weapon.cs script which allows you to specify various settings:
+
+![weapon](https://user-images.githubusercontent.com/10963432/59186828-2da89180-8b74-11e9-962e-54cd854651eb.png)
+
+* The blades in an array. All of these will be activated and deactivated upon keypress
+* The blade extend speed specifies the time interval in seconds at which the blade will be extended and collapsed
+* Weapon Active specifies if the weapon is initially active or not
+* Blade color will be propagated to the blade and the light which is attached to the blade
+* Blade Color Intensity defines how much color will be used. This very much depends on your lighting settings (eg if you use lum or another)
+* Light Intensity is the intensity of the light which is attached to the blade. It's attached at the center of the blade, the intensity will vary depending on the expansion state
+* Then there are varous audio source which will be played when the weapon is switched on, off and is active
 
 
 ### Addendum
