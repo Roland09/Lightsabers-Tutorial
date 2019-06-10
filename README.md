@@ -87,6 +87,11 @@ Then there's the Weapon GameObject itself. It contains the Weapon.cs script whic
 * Light Intensity is the intensity of the light which is attached to the blade. It's attached at the center of the blade, the intensity will vary depending on the expansion state
 * Then there are varous audio source which will be played when the weapon is switched on, off and is active
 
+The glow effect is created using a custom shader, a very simple one for now. You could do it with the standard HDRP shaders as well, but I intend to enhance it with a pulsating one in the future.
+
+![shader](https://user-images.githubusercontent.com/10963432/59187508-e7543200-8b75-11e9-894f-bc14cf71c5cb.png)
+
+
 
 ### Addendum
 
