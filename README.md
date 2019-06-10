@@ -1,4 +1,4 @@
-# Lightsabers-Tutorial
+# How to create a Lightsaber like Weapon in Unity
 
 ### Foreword
 
