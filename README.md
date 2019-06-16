@@ -4,6 +4,8 @@
 
 This is an educational tutorial, this free asset is for training purposes only.
 
+This repository covers the HDRP, there's an [additional repository for the Standard Render Pipeline](https://github.com/Roland09/Lightsabers-Tutorial-Standard).
+
 ### Introduction
 
 Two years ago, when I started with Unity, I created lightsaber (see Addendum #1) like weapons to toy around in VR. Those have always been free for personal usage. Today I thought I'd try lightsaber like weapons in HDRP and share them as well. You can find the source code on [github](https://github.com/Roland09/Lightsabers-Tutorial).
